@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-
+use App\Models\Students;
 class ExampleTest extends TestCase
 {
     /**
@@ -15,6 +15,15 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function create_students (): void {
+        $student = Students::create([
+            'name' => 'John Doe',
+            'email' => 'ousa@itc.edu.kh',
+            'phone' => '012 345 678',
+            'dob' => '2003-10-01'
+        ]);
     }
     
 }
